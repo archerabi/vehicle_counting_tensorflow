@@ -255,7 +255,7 @@ def object_detection_function(command):
                             csv_line.split(',')
                         writer.writerows([csv_line.split(',')])
             cap.release()
-            cv2.destroyAllWindows()
+            # cv2.destroyAllWindows()
 
 
 import argparse

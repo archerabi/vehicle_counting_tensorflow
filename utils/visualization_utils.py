@@ -178,8 +178,8 @@ def draw_bounding_box_on_image(current_frame_number,image,
 
   detected_vehicle_image = image_temp[int(top):int(bottom), int(left):int(right)]
 
-  if(bottom > ROI_POSITION): # if the vehicle get in ROI area, vehicle predicted_speed predicted_color algorithms are called - 200 is an arbitrary value, for my case it looks very well to set position of ROI line at y pixel 200
-        predicted_direction,  is_vehicle_detected, update_csv = True
+  # if(bottom > ROI_POSITION): # if the vehicle get in ROI area, vehicle predicted_speed predicted_color algorithms are called - 200 is an arbitrary value, for my case it looks very well to set position of ROI line at y pixel 200
+  #       predicted_direction,  is_vehicle_detected, update_csv = True
 
   # predicted_color = color_recognition_api.color_recognition(detected_vehicle_image)
   
@@ -192,7 +192,7 @@ def draw_bounding_box_on_image(current_frame_number,image,
   # box exceeds the top of the image, stack the strings below the bounding box
   # instead of above.
   display_str_list[0] = display_str_list[0]
-  csv_line = str (predicted_direction)
+  # csv_line = str (predicted_direction)
   display_str_heights = [font.getsize(ds)[1] for ds in display_str_list]
 
   # Each display_str has a top and bottom margin of 0.05x.

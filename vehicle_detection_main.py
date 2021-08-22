@@ -188,16 +188,16 @@ def object_detection_function(command):
                     2,
                     cv2.LINE_AA,
                     )
-                cv2.putText(
-                    input_frame,
-                    'LAST PASSED VEHICLE INFO',
-                    (11, 290),
-                    font,
-                    0.5,
-                    (0xFF, 0xFF, 0xFF),
-                    1,
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    )
+                # cv2.putText(
+                #     input_frame,
+                #     'LAST PASSED VEHICLE INFO',
+                #     (11, 290),
+                #     font,
+                #     0.5,
+                #     (0xFF, 0xFF, 0xFF),
+                #     1,
+                #     cv2.FONT_HERSHEY_SIMPLEX,
+                #     )
                 # cv2.putText(
                 #     input_frame,
                 #     '-Movement Direction: ' + direction,

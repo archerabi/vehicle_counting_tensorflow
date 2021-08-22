@@ -198,46 +198,46 @@ def object_detection_function(command):
                     1,
                     cv2.FONT_HERSHEY_SIMPLEX,
                     )
-                cv2.putText(
-                    input_frame,
-                    '-Movement Direction: ' + direction,
-                    (14, 302),
-                    font,
-                    0.4,
-                    (0xFF, 0xFF, 0xFF),
-                    1,
-                    cv2.FONT_HERSHEY_COMPLEX_SMALL,
-                    )
-                cv2.putText(
-                    input_frame,
-                    '-Speed(km/h): ' + str(speed).split(".")[0],
-                    (14, 312),
-                    font,
-                    0.4,
-                    (0xFF, 0xFF, 0xFF),
-                    1,
-                    cv2.FONT_HERSHEY_COMPLEX_SMALL,
-                    )
-                cv2.putText(
-                    input_frame,
-                    '-Color: ' + color,
-                    (14, 322),
-                    font,
-                    0.4,
-                    (0xFF, 0xFF, 0xFF),
-                    1,
-                    cv2.FONT_HERSHEY_COMPLEX_SMALL,
-                    )
-                cv2.putText(
-                    input_frame,
-                    '-Vehicle Size/Type: ' + size,
-                    (14, 332),
-                    font,
-                    0.4,
-                    (0xFF, 0xFF, 0xFF),
-                    1,
-                    cv2.FONT_HERSHEY_COMPLEX_SMALL,
-                    )
+                # cv2.putText(
+                #     input_frame,
+                #     '-Movement Direction: ' + direction,
+                #     (14, 302),
+                #     font,
+                #     0.4,
+                #     (0xFF, 0xFF, 0xFF),
+                #     1,
+                #     cv2.FONT_HERSHEY_COMPLEX_SMALL,
+                #     )
+                # cv2.putText(
+                #     input_frame,
+                #     '-Speed(km/h): ' + str(speed).split(".")[0],
+                #     (14, 312),
+                #     font,
+                #     0.4,
+                #     (0xFF, 0xFF, 0xFF),
+                #     1,
+                #     cv2.FONT_HERSHEY_COMPLEX_SMALL,
+                #     )
+                # cv2.putText(
+                #     input_frame,
+                #     '-Color: ' + color,
+                #     (14, 322),
+                #     font,
+                #     0.4,
+                #     (0xFF, 0xFF, 0xFF),
+                #     1,
+                #     cv2.FONT_HERSHEY_COMPLEX_SMALL,
+                #     )
+                # cv2.putText(
+                #     input_frame,
+                #     '-Vehicle Size/Type: ' + size,
+                #     (14, 332),
+                #     font,
+                #     0.4,
+                #     (0xFF, 0xFF, 0xFF),
+                #     1,
+                #     cv2.FONT_HERSHEY_COMPLEX_SMALL,
+                #     )
 
                 if(command=="imshow"):
                     cv2.imshow('vehicle detection', input_frame)

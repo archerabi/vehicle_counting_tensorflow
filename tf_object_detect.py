@@ -146,9 +146,9 @@ def load_img(path):
   return img
 
 def run_detector(detector, path):
-  img = load_img(path)
+#   img = load_img(path)
 
-  converted_img  = tf.image.convert_image_dtype(img, tf.float32)[tf.newaxis, ...]
+#   converted_img  = tf.image.convert_image_dtype(img, tf.float32)[tf.newaxis, ...]
   start_time = time.time()
 
   fourcc = cv2.VideoWriter_fourcc(*'XVID')
@@ -158,14 +158,15 @@ def run_detector(detector, path):
   while cap.isOpened():
     (ret, frame) = cap.read()
 
-    if frame_number > 20:
-        break;
     if not ret:
         print ('end of the video file...')
         break
 
     input_frame = frame
-    result = detector(converted_img)
+    # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
+    image_np_expanded = np.expand_dims(input_frame, axis=0)
+    input_tensor = tf.convert_to_tensor(np.expand_dims(input_frame, 0), dtype=tf.float32)
+    result = detector(input_tensor)
     end_time = time.time()
     frame_number = frame_number+1
     result = {key:value.numpy() for key,value in result.items()}
@@ -174,7 +175,7 @@ def run_detector(detector, path):
     print("Inference time: ", end_time-start_time)
 
     image_with_boxes = draw_boxes(
-        img.numpy(), result["detection_boxes"],
+        image_np_expanded, result["detection_boxes"],
         result["detection_class_entities"], result["detection_scores"])
   output_movie.write(image_with_boxes)
 #   display_image(image_with_boxes)
